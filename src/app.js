@@ -3,7 +3,7 @@
  * 前端逻辑：调后端 API，只负责展示。
  * 所有计算由后端完成。
  */
-const API_BASE = "http://127.0.0.1:5000";
+const API_BASE = "https://Acedir.pythonanywhere.com";
 
 // 标记「刚刚按过 =」，用于实现「按 = 后算式和结果保留」
 let justCalculated = false;
