@@ -1,0 +1,245 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 520px;
+}
+
+h1 {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 6px;
+    color: #2c3e50;
+}
+
+.subtitle {
+    font-size: 13px;
+    text-align: center;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+/* ============ 计算器 ============ */
+
+.calculator {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.display {
+    background: #f0f3f8;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    min-height: 100px;
+}
+
+#expression {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    color: #222;
+    outline: none;
+    font-family: "Consolas", monospace;
+}
+
+#expression::placeholder {
+    color: #aab;
+    font-size: 16px;
+}
+
+.result {
+    font-size: 26px;
+    color: #2c3e50;
+    text-align: right;
+    min-height: 32px;
+    margin-top: 8px;
+    word-break: break-all;
+    font-weight: 600;
+}
+
+.result.error {
+    color: #e74c3c;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.message {
+    font-size: 13px;
+    color: #888;
+    text-align: right;
+    min-height: 18px;
+    margin-top: 4px;
+}
+
+/* ============ 按钮 ============ */
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    padding: 16px 0;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    background: #eef1f6;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.05s;
+    font-family: inherit;
+}
+
+.btn:hover {
+    background: #e0e5ee;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn.op {
+    background: #d8e4f5;
+    color: #2c5282;
+    font-weight: 600;
+}
+
+.btn.op:hover {
+    background: #c5d7ee;
+}
+
+.btn.equal {
+    background: #4a90e2;
+    color: white;
+    font-weight: 600;
+    grid-column: span 4;
+}
+
+.btn.equal:hover {
+    background: #3a7bc8;
+}
+
+/* ============ 历史记录 ============ */
+
+.history-section {
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    padding: 20px;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.history-header h2 {
+    font-size: 17px;
+    color: #2c3e50;
+}
+
+.btn-clear {
+    background: #fcebeb;
+    color: #c0392b;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    transition: background 0.15s;
+}
+
+.btn-clear:hover {
+    background: #f8d7d7;
+}
+
+.history-loading,
+.history-empty {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    padding: 20px 0;
+}
+
+.history-list {
+    list-style: none;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: #f7f9fc;
+    transition: background 0.15s;
+}
+
+.history-item:hover {
+    background: #eef3fa;
+}
+
+.history-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.history-expr {
+    font-family: "Consolas", monospace;
+    font-size: 15px;
+    color: #2c3e50;
+    word-break: break-all;
+}
+
+.history-result {
+    font-size: 14px;
+    color: #4a90e2;
+    margin-top: 3px;
+    font-weight: 600;
+}
+
+.history-time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 3px;
+}
+
+.btn-delete {
+    background: transparent;
+    border: none;
+    color: #c0392b;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-left: 10px;
+    transition: background 0.15s;
+}
+
+.btn-delete:hover {
+    background: #fcebeb;
+}

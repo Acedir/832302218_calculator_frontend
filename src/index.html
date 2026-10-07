@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前后端分离计算器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>前后端分离计算器</h1>
+        <p class="subtitle">前端仅负责界面与请求，所有计算在后端完成</p>
+
+        <!-- 计算器区域 -->
+        <div class="calculator">
+            <div class="display">
+                <input type="text" id="expression" placeholder="输入表达式，如 (1+2)*3" autocomplete="off">
+                <div id="result" class="result"></div>
+                <div id="message" class="message"></div>
+            </div>
+
+            <div class="buttons">
+                <!-- 第一行：功能键 -->
+                <button class="btn" data-action="backspace">⌫</button>
+                <button class="btn" data-action="clear">清空</button>
+                <button class="btn op" data-value="(">(</button>
+                <button class="btn op" data-value=")">)</button>
+
+                <!-- 第二行 -->
+                <button class="btn" data-value="7">7</button>
+                <button class="btn" data-value="8">8</button>
+                <button class="btn" data-value="9">9</button>
+                <button class="btn op" data-value="÷">÷</button>
+
+                <!-- 第三行 -->
+                <button class="btn" data-value="4">4</button>
+                <button class="btn" data-value="5">5</button>
+                <button class="btn" data-value="6">6</button>
+                <button class="btn op" data-value="×">×</button>
+
+                <!-- 第四行 -->
+                <button class="btn" data-value="1">1</button>
+                <button class="btn" data-value="2">2</button>
+                <button class="btn" data-value="3">3</button>
+                <button class="btn op" data-value="-">-</button>
+
+                <!-- 第五行 -->
+                <button class="btn op" data-value="%">%</button>
+                <button class="btn" data-value="0">0</button>
+                <button class="btn" data-value=".">.</button>
+                <button class="btn op" data-value="+">+</button>
+
+                <!-- 第六行：= 跨 4 列，占满整行 -->
+                <button class="btn equal" data-action="calculate">=</button>
+            </div>
+        </div>
+
+        <!-- 历史记录区域 -->
+        <div class="history-section">
+            <div class="history-header">
+                <h2>计算历史</h2>
+                <button id="clear-history" class="btn-clear">清空历史</button>
+            </div>
+            <div id="history-loading" class="history-loading">加载中...</div>
+            <ul id="history-list" class="history-list"></ul>
+            <div id="history-empty" class="history-empty" style="display: none;">
+                暂无历史记录
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
